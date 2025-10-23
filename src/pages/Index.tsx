@@ -17,21 +17,30 @@ const Index = () => {
   } = useVehicleSimulation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-card py-8 px-4">
-      <div className="container mx-auto max-w-6xl space-y-8">
+    <div className="min-h-screen relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 25% 3%) 50%, hsl(var(--background)) 100%)',
+      }}
+    >
+      {/* Ambient background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.08),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--secondary)/0.06),transparent_50%)]" />
+      
+      <div className="container mx-auto px-4 md:px-8 py-8 md:py-12 space-y-10 relative">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1
-            className="text-4xl font-bold tracking-tight"
+        <div className="text-center space-y-3">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight"
             style={{
-              color: 'hsl(var(--primary))',
-              textShadow: '0 0 30px hsl(var(--cluster-glow) / 0.5)',
+              background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              filter: 'drop-shadow(0 0 30px hsl(var(--primary) / 0.3))',
             }}
           >
             TVS iQube Digital Cluster
           </h1>
-          <p className="text-muted-foreground">
-            Interactive Electric Scooter Simulation
+          <p className="text-muted-foreground text-base md:text-lg font-medium tracking-wide uppercase">
+            Interactive Vehicle Simulation
           </p>
         </div>
 
@@ -54,8 +63,8 @@ const Index = () => {
         />
 
         {/* Info Footer */}
-        <div className="text-center text-sm text-muted-foreground pt-4 border-t border-border/50">
-          <p>
+        <div className="text-center text-sm text-muted-foreground pt-8 mt-4 border-t border-border/30 max-w-2xl mx-auto">
+          <p className="font-medium tracking-wide">
             Use the throttle slider to accelerate • Toggle indicators and lights • Switch between Eco & Power modes
           </p>
         </div>

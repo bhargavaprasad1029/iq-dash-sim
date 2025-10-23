@@ -9,67 +9,67 @@ export const TelltaleIndicators = ({ vehicleState }: TelltaleIndicatorsProps) =>
   const { leftIndicator, rightIndicator, highBeam, sideStand } = vehicleState;
 
   return (
-    <div className="flex justify-center items-center gap-8 py-6">
+    <div className="flex justify-center items-center gap-12 py-8">
       {/* Left Indicator */}
       <div
-        className={`flex items-center gap-2 transition-opacity ${
-          leftIndicator ? 'active-indicator' : 'opacity-30'
+        className={`flex items-center gap-3 transition-all duration-300 ${
+          leftIndicator ? 'active-indicator scale-110' : 'opacity-40'
         }`}
       >
         <ChevronLeft
-          className="w-8 h-8"
+          className="w-10 h-10 transition-transform duration-300"
           style={{
             color: leftIndicator ? 'hsl(var(--secondary))' : 'hsl(var(--muted-foreground))',
-            filter: leftIndicator ? 'drop-shadow(0 0 10px hsl(var(--secondary)))' : 'none',
+            filter: leftIndicator ? 'drop-shadow(0 0 16px hsl(var(--secondary))) drop-shadow(0 0 8px hsl(var(--secondary)))' : 'none',
           }}
         />
-        <span className="text-sm font-medium uppercase tracking-wide">Left</span>
+        <span className="text-sm font-bold uppercase tracking-[0.15em]">Left</span>
       </div>
 
       {/* High Beam */}
       <div
-        className={`flex flex-col items-center gap-1 transition-opacity ${
-          highBeam ? '' : 'opacity-30'
+        className={`flex flex-col items-center gap-2 transition-all duration-300 ${
+          highBeam ? 'scale-110' : 'opacity-40'
         }`}
       >
         <Lightbulb
-          className="w-8 h-8"
+          className="w-10 h-10 transition-transform duration-300"
           style={{
             color: highBeam ? 'hsl(var(--accent))' : 'hsl(var(--muted-foreground))',
-            filter: highBeam ? 'drop-shadow(0 0 10px hsl(var(--accent)))' : 'none',
+            filter: highBeam ? 'drop-shadow(0 0 16px hsl(var(--accent))) drop-shadow(0 0 8px hsl(var(--accent)))' : 'none',
           }}
         />
-        <span className="text-xs font-medium uppercase tracking-wide">High Beam</span>
+        <span className="text-xs font-bold uppercase tracking-[0.15em]">High Beam</span>
       </div>
 
       {/* Side Stand Warning */}
       <div
-        className={`flex flex-col items-center gap-1 transition-opacity ${
-          sideStand ? 'active-indicator' : 'opacity-30'
+        className={`flex flex-col items-center gap-2 transition-all duration-300 ${
+          sideStand ? 'active-indicator scale-110' : 'opacity-40'
         }`}
       >
         <AlertTriangle
-          className="w-8 h-8"
+          className="w-10 h-10 transition-transform duration-300"
           style={{
             color: sideStand ? 'hsl(var(--warning))' : 'hsl(var(--muted-foreground))',
-            filter: sideStand ? 'drop-shadow(0 0 10px hsl(var(--warning)))' : 'none',
+            filter: sideStand ? 'drop-shadow(0 0 16px hsl(var(--warning))) drop-shadow(0 0 8px hsl(var(--warning)))' : 'none',
           }}
         />
-        <span className="text-xs font-medium uppercase tracking-wide">Side Stand</span>
+        <span className="text-xs font-bold uppercase tracking-[0.15em]">Side Stand</span>
       </div>
 
       {/* Right Indicator */}
       <div
-        className={`flex items-center gap-2 transition-opacity ${
-          rightIndicator ? 'active-indicator' : 'opacity-30'
+        className={`flex items-center gap-3 transition-all duration-300 ${
+          rightIndicator ? 'active-indicator scale-110' : 'opacity-40'
         }`}
       >
-        <span className="text-sm font-medium uppercase tracking-wide">Right</span>
+        <span className="text-sm font-bold uppercase tracking-[0.15em]">Right</span>
         <ChevronRight
-          className="w-8 h-8"
+          className="w-10 h-10 transition-transform duration-300"
           style={{
             color: rightIndicator ? 'hsl(var(--secondary))' : 'hsl(var(--muted-foreground))',
-            filter: rightIndicator ? 'drop-shadow(0 0 10px hsl(var(--secondary)))' : 'none',
+            filter: rightIndicator ? 'drop-shadow(0 0 16px hsl(var(--secondary))) drop-shadow(0 0 8px hsl(var(--secondary)))' : 'none',
           }}
         />
       </div>
